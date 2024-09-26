@@ -15,7 +15,7 @@
             // | CTRL | ALT | GUI | SPC | SPC | SPC |     | SPC | LOW |LARW |DARW |UARW | RARW |
 
             bindings = <
-&kp GRAVE   &kp F1            &kp F2        &kp F3        &kp F4  &kp F5       &kp F6     &kp F7  &kp F8     &kp N9             &kp N0           &kp DELETE
+&kp GRAVE   &kp F1            &kp F2        &kp F3        &kp F4  &kp F5       &kp F6     &kp F7  &kp F8     &kp F9             &kp F10          &kp DELETE
 &kp TAB     &kp Q             &kp W         &kp E         &kp R   &kp T        &kp Y      &kp U   &kp I      &kp O              &kp P            &kp BACKSPACE
 &kp CAPS    &kp A             &kp S         &kp D         &kp F   &kp G        &kp H      &kp J   &kp K      &kp L              &kp SEMI         &kp SINGLE_QUOTE
 &kp LSHFT   &kp Z             &kp X         &kp C         &kp V   &kp B        &kp N      &kp M   &kp COMMA  &kp DOT            &kp FSLH         &kp APOS
@@ -54,5 +54,12 @@
         };
     };
 
-    conditional_layers { compatible = "zmk,conditional-layers"; };
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+
+        numpad {
+            if-layers = <1 2>;
+            then-layer = <3>;
+        };
+    };
 };
